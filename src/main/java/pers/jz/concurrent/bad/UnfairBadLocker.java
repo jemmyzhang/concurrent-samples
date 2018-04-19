@@ -1,9 +1,5 @@
 package pers.jz.concurrent.bad;
 
-/**
- * @author Jemmy Zhang on 2018/4/19.
- */
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
