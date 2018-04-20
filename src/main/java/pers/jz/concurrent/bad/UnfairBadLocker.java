@@ -30,14 +30,15 @@ public class UnfairBadLocker {
                 }
                 waitingList.remove(monitorObject);
                 lockingThread = Thread.currentThread();
-                isLocked = false;
+                isLocked = true;
             }
         }
     }
 
-    public void unlock() throws InterruptedException {
+    public void unlock(){
         synchronized (this) {
-            if (!Objects.equals(this, lockingThread)) {
+            Thread thread = Thread.currentThread();
+            if (!Objects.equals(thread, lockingThread)) {
                 throw new IllegalMonitorStateException("Calling thread has not locked this lock");
             }
             isLocked = false;
@@ -49,5 +50,9 @@ public class UnfairBadLocker {
     }
 
     public static class MonitorObject {
+    }
+
+    public static void main(String[] args){
+
     }
 }
