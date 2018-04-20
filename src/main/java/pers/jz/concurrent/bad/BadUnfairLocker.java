@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * @author Jemmy Zhang on 2018/4/19.
  */
-public class UnfairBadLocker {
+public class BadUnfairLocker {
 
     private MonitorObject monitorObject = new MonitorObject();
 

@@ -1,20 +1,16 @@
 package pers.jz.concurrent.bad;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
-
 /**
  * @author Jemmy Zhang on 2018/4/20.
  */
-public class UnfairBadLockerTest {
+public class BadUnfairLockerTest {
     public static void main(String[] args) {
-        UnfairBadLocker locker = new UnfairBadLocker();
+        BadUnfairLocker locker = new BadUnfairLocker();
         startThread(locker, "thread1");
         startThread(locker, "thread2");
     }
 
-    private static void startThread(UnfairBadLocker locker, String thread) {
+    private static void startThread(BadUnfairLocker locker, String thread) {
         new Thread(() -> {
             while (true) {
                 try {
